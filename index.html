@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Sponge bob mOcK tExt GeNeRaToR</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="style.css" rel="stylesheet">
+  </head>
+  <body>
+  
+<div class="container">
+	<label for="input-text">Enter Text to mock</label>
+	<input type="text" id="input-text" class="input-text" placeholder="Enter text to mock" />
+
+	
+	<div class="image-container"><img class="bg-image" src="https://pyxis.nymag.com/v1/imgs/09c/923/65324bb3906b6865f904a72f8f8a908541-16-spongebob-explainer.2x.rhorizontal.w700.jpg" alt="Spongbob meme">
+		<h1 id="mocked" class="mocked-text">PiNe APpLe BElOnGs oN PiZzA</h1>
+	</div>
+</div>
+
+    <script>
+      
+let inputText = document.getElementById('input-text')
+
+inputText.addEventListener('input', changeToMockText)
+
+
+function changeToMockText() {
+	const mockedText = mockText(inputText.value)
+	document.getElementById('mocked').innerText = mockedText
+}
+
+function mockText(text) {
+	const splitText = text.split("");
+	return splitText.map((char, idx) => {
+		return (idx % 2 === 0) ? char.toUpperCase() : char
+	}).join("")
+}
+
+    </script>
+  </body>
+</html>

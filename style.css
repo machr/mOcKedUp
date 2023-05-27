@@ -1,0 +1,36 @@
+input[type=text] {
+	border: 2 solid purple;
+	border-radius 2rem;
+	padding: 1rem;
+	box-sizing: border-box;
+	width: 100%;
+}
+
+.container {
+	width: 60%;
+	margin: 3rem auto;
+}
+
+.image-container {
+	position: relative;
+}
+
+.bg-image {
+	position: absolute;
+}
+
+.mocked-text {
+	max-width: 80%;
+	position: absolute;
+	top: 3rem;
+	left: 3rem;
+	font-size: 3rem;
+	-webkit-text-stroke: 2px black;
+	-webkit-text-fill-color: white;
+	font-weight: 900;
+	font-family: "Impact";
+}
+
+
+
+
