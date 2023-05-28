@@ -8,35 +8,33 @@
   </head>
   <body>
   
-<div class="container">
-	<label for="input-text">Enter Text to mock</label>
-	<input type="text" id="input-text" class="input-text" placeholder="Enter text to mock" />
+	<main class="container">
+		<label for="input-text">Enter Text to mock</label>
+		<input type="text" id="input-text" class="input-text" placeholder="Enter text to mock" />
 
-	
-	<div class="image-container"><img class="bg-image" src="https://pyxis.nymag.com/v1/imgs/09c/923/65324bb3906b6865f904a72f8f8a908541-16-spongebob-explainer.2x.rhorizontal.w700.jpg" alt="Spongbob meme">
-		<h1 id="mocked" class="mocked-text">PiNeAPpLe BElOnGs oN PiZzA</h1>
-	</div>
-</div>
-
-    <script>
+		
+		<div class="image-container"><img class="bg-image" src="https://pyxis.nymag.com/v1/imgs/09c/923/65324bb3906b6865f904a72f8f8a908541-16-spongebob-explainer.2x.rhorizontal.w700.jpg" alt="Spongbob meme">
+			<h1 id="mocked" class="mocked-text">PiNeAPpLe BElOnGs oN PiZzA</h1>
+		</div>
+	</main>
+	<footer>
+		<a href="https://github.com/machr/mocky-bird">Github</a>
+	</footer>
+	<script>
       
-let inputText = document.getElementById('input-text')
+	let inputText = document.getElementById('input-text')
+	inputText.addEventListener('input', changeToMockText)
+	function changeToMockText() {
+		const mockedText = mockText(inputText.value)
+		document.getElementById('mocked').innerText = mockedText
+	}
 
-inputText.addEventListener('input', changeToMockText)
-
-
-function changeToMockText() {
-	const mockedText = mockText(inputText.value)
-	document.getElementById('mocked').innerText = mockedText
-}
-
-function mockText(text) {
-	const splitText = text.split("");
-	return splitText.map((char, idx) => {
-		return (idx % 2 === 0) ? char.toUpperCase() : char
-	}).join("")
-}
-
+	function mockText(text) {
+		const splitText = text.split("");
+		return splitText.map((char, idx) => {
+			return (idx % 2 === 0) ? char.toUpperCase() : char
+		}).join("")
+	}
     </script>
   </body>
 </html>

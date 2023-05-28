@@ -1,14 +1,28 @@
 input[type=text] {
 	border: 2 solid purple;
-	border-radius 2rem;
+	border-radius: 2rem;
 	padding: 1rem;
 	box-sizing: border-box;
 	width: 100%;
 }
 
+body {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
 .container {
 	width: 60%;
 	margin: 3rem auto;
+	flex-grow: 1;
+}
+
+footer {
+	height: 8vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .image-container {
@@ -17,6 +31,7 @@ input[type=text] {
 
 .bg-image {
 	position: absolute;
+	width: 100%;
 }
 
 .mocked-text {
